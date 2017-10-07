@@ -173,3 +173,19 @@ input[type] {
 input[type=tel] {
     background-color: red;
 }
+/* selector [attr~="val"] - określa element, który posiada atrybut, który w wartości posiada dany ciąg znakóew (dokładnie) */
+
+input[type~="opis"] {
+    background-color: black;
+}
+/* selector [attr*="val"] określa element, który w atrybucie posiadawystąpienie ciągu znaków */
+input[type*="pia"] {
+    background-color: blue;
+}
+/* selector [attr^"val"] - określa elementy, których atrybut kończy się  podanym ciągiem znaków */
+input[type^="poczatek"] {
+    background-color: violet;
+}
+input[type$="koniec"] {
+    background-color: blue;
+}
