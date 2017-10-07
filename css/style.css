@@ -1,0 +1,175 @@
+/*selektor uniwersalny - łapie wszystkie elemwnty na stronie*/
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*selektor elementu - łapie wszystkie podane jako selektor elementy na stronie*/
+
+p {
+    font-size: 30px;
+}
+
+/*selektor identyfikatora lapie element o okreslonym id w kodzie html*/
+
+#testowy {
+    background-color: aqua;
+}
+
+/*seelektor klasy - lapie elementy o okreslonej klasie z kodu html*/
+
+.testowy_inner {
+    color: green;
+    font-size: 36px;
+}
+
+/*selektor potomka*/
+
+#selektor_potomka p {
+    font-size: 48px;
+    color: red;
+}
+
+/*selektor dziecka/bezpośredniego potomka - lapie elementy na bezposrednim poziomie zagniezdzenia (1 w dol)*/
+#selektor_dziecka > p {
+    font-size: 40px;
+    color: violet;
+}
+/*selektor brata/braci - lapie elementy bezposrednio po elemencie poprzedzajacym, na tym samym poziomie zagniezdzenia*/
+
+#selektor_braci span + p {
+    color: black;
+    background-color: aqua;
+}
+
+/*pseudoelementy before i after nie istnieja bez ustawionej wlasciwosci content (moze byc nawet pusta), after i before nie naleza do elementu*/
+#pseudoelementy h1::before {
+    content: "Lorem";
+    color: red;
+}
+
+#pseudoelementy h1::after {
+    content: "Lorem";
+    color: green;
+}
+
+/*pseudoelement first-letter*/
+#pseudoelementy h1::first-letter {
+    color: yellow;
+}
+/*pseudoelement ::first-line lapie cala pierwsza linie podanego selektora*/
+#pseudoelementy .first-line::first-line {
+    color: chocolate;
+}
+
+/*pseudoklasy linkow*/
+/*pseudoklasa :link, sluzy do stylowania nieodwiedzonych linkow*/
+#linki a:link {
+    color: grey;
+}
+/*pseudoklasa :visited, sluzy do stylowania nieodwiedzonych linkow*/
+#linki a:visited {
+    color: pink;
+}
+
+/*pseudoklasa :hover, po najechaniu myszka na element*/
+#linki a:hover {
+    color: red;
+}
+/*pseudoklasa :active, kiedy trzymamy LPM na elemencie*/
+#linki a:active {
+    color: orange;
+}
+/*pseudoklasa :focus, kiedy uzupelniamy inputy, textarea*/
+
+#inputy input {
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+#inputy input:focus {
+    border: 3px solid red;
+}
+
+/*pseudoklasa :target, okresla co ma sie stac z elemenem, do ktorego prowadzi kotwia (link z okreslonym ID elementu)*/
+:target {
+    border: 1px solid black;
+}
+
+/*pseudoklasa :lang(nazwa jezyka),okresla odwolanie do elementu z atrybutem lang o okreslonej nazwie jezyka*/
+div {
+    background-color: gray;
+}
+
+div:lang(pl) {
+    background-color: yellow;
+}
+
+/*:first-child :last-child - wybieraja pierwszy i ostatni element z okreslonego selektora*/
+#lista-dzieci ul .list-item {
+    font-size: 20px;
+    color: green;
+}
+
+#lista-dzieci ul .list-item:first-child {
+    font-size: 30px;
+    color: red;
+}
+
+#lista-dzieci ul .list-item:last-child {
+    font-size: 30px;
+    color: blue;
+}
+/*pseudoklasa :only-child, lapie element, ktory jest jedynym dzieckiem/potomkiem elementu nadrzednego*/
+#jedyne-dziecko span:only-child {
+    font-style: italic;
+    font-size: 30px;
+    color: green;
+}
+/*pseudoklasa :empty okresla element, który nie posiada zadnego contentu*/
+div:empty {
+    display: block;
+    width: 300ps;
+    height: 300px;
+    background-color: red;
+}
+/*pseudoklasy :nth child(), sluza do okreslenia elementow dzieci, mozemy wskazac konkretne dziecko, parzyste/nieparzyste dzieci, lib utworzyc wzor, ktore dzieci i co ile dzieci maja byc wybrane*/
+#kontener .inner {
+    display: inline-block;
+    height: 300px;
+    background-color: red;
+    margin-bottom: 20px;
+    width: 33%;
+    float: left;
+    margin-right: 0.5%;
+}
+.clear {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+/*
+#kontener .inner:nth-child(3),
+#kontener .inner:nth-child(6) {
+    margin-right: 0;*/
+
+#kontener .inner:nth-child(3n+3) {
+    margin-right: 0;
+}
+#kontener .inner:nth-child(even) {
+    background-color: yellow;
+}
+
+/*selektory atrybutow*/
+/*selektor [attr] - okresla elementy, ktore maja atrybut attr, niezaleznie od ich wartosci*/
+
+input[type] {
+    background-color: green;
+}
+
+/*selektor [attr="val"] - okresla elementy, ktore posiadaja attrybut attr o okreslonej wartosci "val"*/
+input[type=tel] {
+    background-color: red;
+}
