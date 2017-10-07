@@ -1,8 +1,13 @@
 form {
     width: 400px;
     height: 600px;
-    background-color: darkblue;
+    background-color: #213b50;
+    color: white;
 }
-.input {
-    background-color: blue;
+.input[type="text"]:focus
+.input[type="email"]:focus
+.input[type="telefon"]:focus {
+    select: focus
+    background-color: #2b4a64;
+    
 }

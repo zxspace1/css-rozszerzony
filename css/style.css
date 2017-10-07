@@ -149,6 +149,24 @@ div:empty {
     display: block;
     width: 100%;
 }
+#tranzycje .inner_1,
+#tranzycje .inner_2 {
+    height: 300px;
+    width: 50%
+}
+
+#tranzycje .inner_1 {
+    background-color: green;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-delay: 0,2s;
+ }
+#tranzycje .inner_1:hover {
+    background-color: blue;
+}
+#tranzycje .inner_2 {
+ background-color: red;   
+}
 
 /*
 #kontener .inner:nth-child(3),
@@ -188,4 +206,7 @@ input[type^="poczatek"] {
 }
 input[type$="koniec"] {
     background-color: blue;
+}
+#floated img {
+    float: left;
 }
